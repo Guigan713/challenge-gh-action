@@ -20,8 +20,8 @@ runs:
   steps:
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
-    - name: Start to upper text ${{ input.text }}
+    - name: Start to upper text ${{ inputs.text }}
       run: |
-        upper.sh 'text=${{ input.text }}' >> $GITHUB_OUTPUT
+        upper.sh 'text=${{ inputs.text }}' >> $GITHUB_OUTPUT
       shell: bash
       id: upper-step
