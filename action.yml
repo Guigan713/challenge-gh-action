@@ -22,6 +22,7 @@ runs:
       shell: bash
     - name: Start to upper text ${{ inputs.text }}
       run: |
+        chmod +x ./upper.sh
         upper.sh 'text=${{ inputs.text }}' >> $GITHUB_OUTPUT
       shell: bash
       id: upper-step
