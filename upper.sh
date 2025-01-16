@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $1 | tr '[:lower:]' '[:upper:]'
+sudo echo $1 | tr '[:lower:]' '[:upper:]'
