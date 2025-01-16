@@ -2,24 +2,26 @@
 name: Challenge GH Action to upper
 
 on:
-    push:
+  push:
+    branches:
+      - main
 
 jobs:
-    challenge:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                fetch-depth: 1
-            - name: Test Output
-              uses: ./
-              id: uppered
-              with:
-                text: |
-                    Hello DevOps Nornes 
+  challenge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Test Output
+        uses: ./
+        id: uppered
+        with:
+          text: |
+              Hello DevOps Nornes 
 
-            - name: debug the uppered text message
-              run: echo ${{ steps.uppered.outputs.text }}
+      - name: debug the uppered text message
+        run: echo ${{ steps.uppered.outputs.text }}
 
               
